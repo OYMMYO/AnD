@@ -1,0 +1,81 @@
+version: '3'
+services:
+  chall1_teamA:
+    build: .
+    image: chall1
+    ports:
+      - "10001:80"
+      - "1001:22"
+    depends_on:
+      - db_teama
+    restart: always
+
+  db_teama:
+    build: ./db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: bullet_teama
+
+  chall1_teamB:
+    build: .
+    image: chall1
+    ports:
+      - "10002:80"
+      - "1002:22"
+    depends_on:
+      - db_teamb
+    restart: always
+
+  db_teamb:
+    build: ./db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: bullet_teamb
+
+  chall1_teamC:
+    build: .
+    image: chall1
+    ports:
+      - "10003:80"
+      - "1003:22"
+    depends_on:
+      - db_teamc
+    restart: always
+
+  db_teamc:
+    build: ./db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: bullet_teamc
+
+  chall1_teamD:
+    build: .
+    image: chall1
+    ports:
+      - "10004:80"
+      - "1004:22"
+    depends_on:
+      - db_teamd
+    restart: always
+
+  db_teamd:
+    build: ./db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: bullet_teamd
+
+  chall1_teamE:
+    build: .
+    image: chall1
+    ports:
+      - "10005:80"
+      - "1005:22"
+    depends_on:
+      - db_teame
+    restart: always
+
+  db_teame:
+    build: ./db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: bullet_teame
